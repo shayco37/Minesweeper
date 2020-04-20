@@ -1,0 +1,14 @@
+@startuml
+
+package "Minesweeper" {
+HTTP - [First Component]
+[Another Component]
+}
+
+package "Other Groups" {
+FTP - [Second Component]
+
+[First Component] --> FTP
+}
+
+@enduml
