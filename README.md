@@ -1,6 +1,6 @@
 #MineSweeper
 <img src="./screenshot1.png"/>
-<img src="./screenshot2.png/>
+<img src="./screenshot2.png"/>
 ## Guidelines of coding
 
 1. Board should be of configurable width, height 
