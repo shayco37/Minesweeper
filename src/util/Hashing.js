@@ -4,11 +4,10 @@ export default class Hashing{
     }
 
     static unHash(hash) {
-        let column = Number(hash.substr(0,hash.indexOf('-')));
-        let row = Number(hash.substr(hash.indexOf('-')+1, hash.length));
+        const [column, row] = hash.split("-");
         return {
-            column,
-            row
+            column: Number(column),
+            row: Number(row)
         }
     }
 }
