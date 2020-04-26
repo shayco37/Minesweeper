@@ -38,7 +38,6 @@ const SquareComponent = ({ square, squares, squareClicked }) => {
         squareClicked(square, squares, event);
     };
 
-    // const content =  (square.display && square.value)?  square.value : '';
     const { content, revealed } = square;
     const className = revealed && content === Constants.EMPTY ? 'revealed' : '';
 
