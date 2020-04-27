@@ -59,19 +59,27 @@ const Board = ({ rows, columns, mines, gameIsOver, gameEndedSuccessfully, restar
     const { squares, minesLeft, generateBoardSquares } = props;
     const history = useHistory();
 
+    const stopAudio = audio => {
+        audio && audio.pause && audio.pause();
+        setAudio({});
+    };
+
     useEffect( () => {
             generateBoardSquares(rows, columns, mines);
             console.log('start audio');
             const audio = new Audio(PopcornSong);
             audio.play();
             setAudio(audio);
+            return () => {
+                stopAudio(audio);
+            };
+
         }, [rows, columns, mines]
     );
 
     useEffect( () => {
             if (gameIsOver){
-                audio && audio.pause && audio.pause();
-                setAudio({});
+                stopAudio(audio);
                 document.addEventListener('keypress', handleKeyPressed, true);
             }
         }, [ gameIsOver]
