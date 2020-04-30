@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { squareClickedAction } from '../action';
-import { getSquareSelector, getSquares } from '../selector';
+import { squareClickedAction } from '../actions';
+import { getSquareSelector, getSquares } from '../selectors';
 import Constants from '../constants';
 
 const Square = styled.td`

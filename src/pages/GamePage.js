@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from '../container/Board.js';
+import Board from '../containers/Board.js';
 import queryString from 'query-string';
 
 export default ({ location }) => {

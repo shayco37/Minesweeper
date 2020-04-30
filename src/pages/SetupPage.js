@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardSetup from '../form/BoardSetupForm';
+import BoardSetup from '../forms/BoardSetupForm';
 
 export default function() {
     return <BoardSetup/>;

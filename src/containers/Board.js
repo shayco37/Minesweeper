@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { times } from 'lodash';
 import styled from 'styled-components';
-import Hashing from '../util/Hashing';
-import { generateBoardSquares, restartGame } from '../action';
-import { getMinesLeft, getSquares } from '../selector';
-import { isGameOver, isGameEndedSuccessfully } from '../selector';
-import SquareComponent from '../component/SquareComponent';
+import Hashing from '../utils/Hashing';
+import { generateBoardSquares, restartGame } from '../actions';
+import { getMinesLeft, getSquares } from '../selectors';
+import { isGameOver, isGameEndedSuccessfully } from '../selectors';
+import SquareComponent from '../components/SquareComponent';
 import GameIsOver from './gameover.png';
 import PopcornSong from './PopcornOriginalSong.mp3';
 
@@ -97,7 +97,7 @@ const Board = ({ rows, columns, mines, gameIsOver, gameEndedSuccessfully, restar
         const result = [];
         for (let column = 0; column < columns; column++ ){
             const hash = Hashing.hash(column, row);
-            result.push(squares[hash]);
+            squares[hash] && result.push(squares[hash]);
 
         }
         return result;
@@ -105,11 +105,12 @@ const Board = ({ rows, columns, mines, gameIsOver, gameEndedSuccessfully, restar
 
     const renderRow = row => {
         const squares = filterRow(row);
+        debugger;
         return (
-            <tr>
+            <tr key={`row-${row}`}>
                 {
                     squares.map(square => (
-                     <SquareComponent { ...square }/>
+                     <SquareComponent key={square.key} { ...square }/>
                     ))
                 }
             </tr>
@@ -138,7 +139,9 @@ const Board = ({ rows, columns, mines, gameIsOver, gameEndedSuccessfully, restar
             <BoardFrame>
                 { gameIsOver && <GameOver/> }
                 <table>
+                    <tbody>
                     { renderRows() }
+                    </tbody>
                 </table>
                 { gameIsOver && <GameOver/> }
             </BoardFrame>

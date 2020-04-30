@@ -3,9 +3,9 @@ import {
     initalBoard,
     markSquareAsMine,
     unmarkSquareAsMine, updateBoardSquaresAndState
-} from '../action';
+} from '../actions';
 import GameActionsUtils from './GameActionsUtils';
-import { isGameOver, isAllSquaresRevealed } from '../selector';
+import { isGameOver, isAllSquaresRevealed } from '../selectors';
 
 const gameActionsMiddleware = store => next => action =>{
     switch(action.type){

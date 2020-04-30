@@ -2,9 +2,9 @@ import React from 'react';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { gameActionsMiddleware } from './middleware';
-import { WelcomePage, SetupPage, GamePage } from './page';
-import * as reducers from './reducer';
+import { gameActionsMiddleware } from './middlewares';
+import { WelcomePage, SetupPage, GamePage } from './pages';
+import * as reducers from './reducers';
 import './App.css';
 
 export default function (){
@@ -13,6 +13,7 @@ export default function (){
     });
 
     const store = createStore(rootReducers,
+                {},
                               compose(
                                     applyMiddleware(
                                         gameActionsMiddleware

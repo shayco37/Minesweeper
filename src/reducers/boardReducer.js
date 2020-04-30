@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { ACTIONS } from '../action';
+import { ACTIONS } from '../actions';
 import Constants from '../constants';
 
 export default function ( state = { gameIsOver: false, success: false}, action = {}) {

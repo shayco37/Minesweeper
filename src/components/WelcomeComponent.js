@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from './logo.gif';
 
-export default function() {
+export default () => {
     const history = useHistory();
 
     useEffect( () => {

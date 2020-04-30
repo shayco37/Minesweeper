@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import { get } from 'lodash';
-import Hashing from '../util/Hashing';
+import Hashing from '../utils/Hashing';
 
 export const getSquares = state => get(state, 'Board.squares', {} );
 export const getMinesLeft = state => get(state, 'Board.minesLeft', 0);

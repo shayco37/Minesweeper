@@ -1,4 +1,4 @@
-import Hashing from '../util/Hashing';
+import Hashing from '../utils/Hashing';
 import Constants from '../constants';
 
 
