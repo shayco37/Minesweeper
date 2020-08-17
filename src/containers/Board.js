@@ -9,7 +9,8 @@ import { getMinesLeft, getSquares } from '../selectors';
 import { isGameOver, isGameEndedSuccessfully } from '../selectors';
 import SquareComponent from '../components/SquareComponent';
 import GameIsOver from './gameover.png';
-import PopcornSong from './PopcornOriginalSong.mp3';
+//import PopcornSong from './PopcornOriginalSong.mp3';
+import PopcornSong from './PopcornNewSong.mp3';
 
 const Header = styled.header`
   color: white;
